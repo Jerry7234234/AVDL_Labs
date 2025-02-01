@@ -16,6 +16,8 @@ Output bfloat16 number (without bias subtraction): 0 | 01111111 | 1111000 = $2 ^
 
 As we can see, the fact the bfloat16 representation assumes a leading 1. being added to the fractional value leads to dequantization error. Hence by subtracting the bias:
 
-0 | 01111111 | 1111000 - 0 | 01111111 | 0000000 = (0 | 00000000 | 1111000 - 0 | 00000000 | 1000000) << 1 + 0 | 01111111 | 0000000 - 0 | 00000001 | 0000000 = 0 | 01111110 | 1110000 = 0.9375
+output - bias = 0 | 01111111 | 1111000 - 0 | 01111111 | 0000000 =
+
+(0 | 00000000 | 1111000 - 0 | 00000000 | 1000000) << 1 + 0 | 01111111 | 0000000 - 0 | 00000001 | 0000000 = 0 | 01111110 | 1110000 = 0.9375
 
 The computed value now matches the bfloat16 value. In fact, for all MXINT8 mantissa that is of the form X0XXXXXX, the dequantization error will be present and the bias subtraction will need to be done.
