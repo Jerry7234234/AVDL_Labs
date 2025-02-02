@@ -36,7 +36,10 @@ The same observation is obtained with the sacled dot produc attention test. For 
 | naive | 0.8423s | 0.0007s |
 | fused | 0.0243s | 0.0003s |
 
-### Question: What is the purpose of the dont_need_abs variable and the bias variable? Note that unlike IEEE Floating-Point, MXINT has no implicit leading bit for the mantissa.
+### Task 3
+### a) How does MXINT8 benefit custom hardware if both the activation and weights in a linear layer are quantized to MXINT8?
+
+### b) What is the purpose of the variable dont_need_abs and bias in the C++ for loop?
 During the conversion from MXINT8 to bfloat16, only the last 6 bits of the mantissas are used in the fraction part of the output. The 7th bit is ignored and the extracted 6 bits are left shifted by 1 to increase the bit length to 7. This can cause dequantization errors, as the 7th bit of the mantissa for MXINT8 numbers can represent either 1. or 0., but for bfloat16 the 7th bit is always 1. (In other words, bfloat16 and MXINT8 numbers have different dynamic range). For instance:
 
 
