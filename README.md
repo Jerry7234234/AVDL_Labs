@@ -10,7 +10,7 @@ A brief description of the project.
 ![Screenshot1](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20165408.png)
 
 ### Task 2
-![Screenshot2](![Screenshot1](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20165408.png)
+![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20165408.png)
 
 ## Lab4
 ### Task 1
