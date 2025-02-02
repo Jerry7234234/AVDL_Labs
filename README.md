@@ -6,7 +6,7 @@ A brief description of the project.
 - [Lab4](#Lab4)
 
 ## Lab1
-![Alt text](Screenshot 2025-02-02 165408.png?raw=true "Optional Title")
+![Screenshot](Screenshot 2025-02-02 165408.png)
 
 ## Lab4
 ### Task 1
