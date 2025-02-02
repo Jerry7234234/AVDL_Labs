@@ -5,16 +5,19 @@ A brief description of the project.
 ## Table of Contents
 - [Lab4](#Lab4)
 
-## Lab1
+## Lab1: Quantization and pruning
 ### Task 1
 ![Screenshot1](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20165408.png)
 
 ### Task 2
 ![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20170212.png)
 
-## Lab2
+## Lab2: Nerual architecture search
 ### Task 1
 ![Screenshot3](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20170509.png)
+
+### Task 2
+![Screenshot4](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20171240.png)
 
 ## Lab4
 ### Task 1
