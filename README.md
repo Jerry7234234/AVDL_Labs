@@ -6,7 +6,7 @@ A brief description of the project.
 - [Lab4](#Lab4)
 
 ## Lab1
-![Screenshot](Screenshot 2025-02-02 165408.png)
+![Screenshot](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20165408.png)
 
 ## Lab4
 ### Task 1
