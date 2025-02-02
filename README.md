@@ -5,6 +5,9 @@ A brief description of the project.
 ## Table of Contents
 - [Lab4](#Lab4)
 
+## Lab1
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+
 ## Lab4
 ### Task 1
 Although there's no obvious pattern, the general trend is that the optimized model timed using cpu computes relatvely faster then that timed using cuda. This is likely because a cpu model benefits more from the compiler as it removes unneccesay computationt stpes and fused kernel to save up memory and loading time. On the other hand, gpu models are already optimized and has little improvement after compiling. Moreover, since resnet18 is not a large model, the effect of `torch.compile` is less obvious.
