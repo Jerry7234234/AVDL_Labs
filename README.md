@@ -21,6 +21,9 @@ A brief description of the project.
 
 During the neural architectue search, we trained the model for 1 epoch. After compression, we train the compressed model for 2 epoches to fully recover the performance while maximizing the accuracy.
 
+## Lab3: Mixed precision search
+![Screenshot5]()
+
 ## Lab4
 ### Task 1
 Although there's no obvious pattern, the general trend is that the optimized model timed using cpu computes relatvely faster then that timed using cuda. This is likely because a cpu model benefits more from the compiler as it removes unneccesay computationt stpes and fused kernel to save up memory and loading time. On the other hand, gpu models are already optimized and has little improvement after compiling. Moreover, since resnet18 is not a large model, the effect of `torch.compile` is less obvious.
