@@ -14,7 +14,7 @@ A brief description of the project.
 
 ## Lab2: Nerual architecture search
 ### Task 1
-![Screenshot3](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20170509.png)
+![Screenshot3](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20112836.png)
 
 ### Task 2
 ![Screenshot4](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20171240.png)
