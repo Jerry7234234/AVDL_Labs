@@ -10,21 +10,23 @@ A brief description of the project.
 ![Screenshot1](https://github.com/Jerry7234234/AVDL_Labs/blob/main/quantization.png)
 
 ### Task 2
-![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20170212.png)
+![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/pruning%201.png)
+
+![Screenshot3](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20170212.png)
 
 ## Lab2: Nerual architecture search
 ### Task 1
-![Screenshot3](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20112836.png)
+![Screenshot4](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20112836.png)
 
 ### Task 2
-![Screenshot4](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20112554.png)
+![Screenshot5](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20112554.png)
 
 During the neural architectue search, we trained the model for 1 epoch. After compression, we train the compressed model for 2 epoches to fully recover the performance while maximizing the accuracy.
 
 ## Lab3: Mixed precision search
-![Screenshot5](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20121256.png)
+![Screenshot6](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20121256.png)
 
-![Screenshot6](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20121516.png)
+![Screenshot7](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20121516.png)
 
 ## Lab4
 ### Task 1
