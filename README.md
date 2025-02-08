@@ -24,7 +24,7 @@ The performance of L1-norm pruning is stable and consistent and accuracy only st
 ### Task 1
 ![Screenshot4](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20112836.png)
 
-We can see that the TPE sampler achieves the highest accuracy. THis is because TPE sampler extracts the best performing samples and uses kernel density estimation to generalize the best samples to a greater search space in an attempt to discover better solutions amoung the current best solutions. The process then repeats until it converges to the best possible solution. Hence the name "tree-structred". The grid sampler can in theory achieves the best accuracy among all. However, this is only true if we sample all the combinations of configurations and it doesn't perform well with limited trials, especially when the allowed search space range is much smaller than the complete range.
+We can see that the TPE sampler achieves the highest accuracy. This is because TPE sampler extracts the best performing samples and uses kernel density estimation to generalize the best samples to a greater search space in an attempt to discover better solutions amoung the current best solutions. The process then repeats until it converges to the best possible solution. Hence the name "tree-structred". The grid sampler can in theory achieves the best accuracy among all. However, this is only true if we sample all the combinations of configurations and it doesn't perform well with limited trials, especially when the allowed search space range is much smaller than the complete range.
 
 ### Task 2
 ![Screenshot5](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20112554.png)
