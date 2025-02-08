@@ -12,7 +12,11 @@ A brief description of the project.
 ### Task 2
 ![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/pruning%201.png)
 
+We can see that structured pruning using L1-norm regulerisation achieves a higher maximum accuracy than random structured pruning. To better visualize the performance of the two methods, we can plot the actual accuracy per iteration. As shown below:
+
 ![Screenshot3](https://github.com/Jerry7234234/AVDL_Labs/blob/main/pruning%202.png)
+
+The performance of L1-norm pruning is stable and consistent and accuracy only starts to drop at the highest sparisities. The performance of random pruning is noisy and the accuracy flattens to 0.5 after a certain sparsity threshold. This makes sense as L1-norm ranks weights based on their summed absolute values hence only the weights with the samllest influence will be removed, minimising the effect of pruning on accuracy. Whereas random pruning make accidentally removes important weights and adversely affects the accuracy.
 
 ## Lab2: Nerual architecture search
 ### Task 1
