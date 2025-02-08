@@ -9,6 +9,8 @@ A brief description of the project.
 ### Task 1
 ![Screenshot1](https://github.com/Jerry7234234/AVDL_Labs/blob/main/quantization.png)
 
+Post quantization training brought the accuracy back to the same level as the unquantizaed model.
+
 ### Task 2
 ![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/pruning%201.png)
 
