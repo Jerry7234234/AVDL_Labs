@@ -12,7 +12,7 @@ A brief description of the project.
 ### Task 2
 ![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/pruning%201.png)
 
-![Screenshot3](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-02%20170212.png)
+![Screenshot3](https://github.com/Jerry7234234/AVDL_Labs/blob/main/pruning%202.png)
 
 ## Lab2: Nerual architecture search
 ### Task 1
