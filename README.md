@@ -37,7 +37,10 @@ During the neural architectue search, we trained the model for 1 epoch. After co
 ![Screenshot7](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20121516.png)
 
 ## Lab4
-### Task 1
+### Task 1 a)
+We can see that the optimized model does not perfrom any better than the original model, and there are a few possible reasons: (1) The `torch.compile()` funciton introduces a delay caused by compilation overhead, which means the inference speed of the model during the initial iterations are slower and speeds up later on. The fact that we're only using n=5 means a propotion of the runtime operation were occupied by this delay. (2) The input data size is not particularly large, this makes the benefits of using a torch compiler less obvious as the model should perform equally well on small data regardless of whether it was compiled.
+
+### Task 1 b)
 Although there's no obvious pattern, the general trend is that the optimized model timed using cpu computes relatvely faster then that timed using cuda. This is likely because a cpu model benefits more from the compiler as it removes unneccesay computationt stpes and fused kernel to save up memory and loading time. On the other hand, gpu models are already optimized and has little improvement after compiling. Moreover, since resnet18 is not a large model, the effect of `torch.compile` is less obvious.
 
 | Implementation  | CPU  | GPU |
@@ -57,9 +60,10 @@ The same observation is obtained with the sacled dot produc attention test. For 
 ### a) How does MXINT8 benefit custom hardware if both the activation and weights in a linear layer are quantized to MXINT8?
 MXINT8 representation consists of many mantissa terms but only 1 exponent term. This means during an operation, the exponent part is loaded once but the mantissa part is loaded n times where n is the group size. Hence to implement MXINT8 opeartion naively in Python code, one will need to iterate the mantissa parts n times, which is not efficient. However, by using custom hardware that supports n bit parallel loading and can simutaneously load all the mantissa bits at once, this would greatly improve computation time by n times.
 
+MXINT8 format reduces quantization error as it can represent $2^8 * 2^8 = 65536$ values, reducing the workload for custom hardware as large bandwidth floating point operations are not needed. Also, since the exponent part is shared, this makes matrix multiplication operation much easier as it is only applied once at the end of the operation, which saves computation overhead and speeds up the calculation process. Moreover, since each mantissa part is only an 8 bit fixed point number, it can reduce the bandwidth to save up memory in hardware while also allows a simpler gpu architecture by requiring less logic units, these ultimately leads to less power consumption and memory bottleneck.
+
 ### b) What is the purpose of the variable dont_need_abs and bias in the C++ for loop?
 During the conversion from MXINT8 to bfloat16, only the last 6 bits of the mantissas are used in the fraction part of the output. The 7th bit is ignored and the extracted 6 bits are left shifted by 1 to increase the bit length to 7. This can cause dequantization errors, as the 7th bit of the mantissa for MXINT8 numbers can represent either 1. or 0., but for bfloat16 the 7th bit is always 1. (In other words, bfloat16 and MXINT8 numbers have different dynamic range). For instance:
-
 
 MXINT8: 01111111 | 00.111100 = $2 ^ {2 ^ 7 - 1 - 127} \times (2^{-1} + 2^{-2} + 2^{-3} + 2^{-4}) = 1 \times 0.9375 = 0.9375$
 
