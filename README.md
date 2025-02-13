@@ -94,7 +94,7 @@ Tensor gY = local_tile(mY, cta_tiler, cta_coord);
 
 It can either divide the memeory space into intersecting groups with different strides, or into adjacent blocks with a stride of 1. The indices within each tile are partitioned by the input layout, which can be pre-defined by the programmer using layout composition. 
 
-
+![Screenshot8](https://github.com/Jerry7234234/AVDL_Labs/blob/main/tiling.png)
 
 This means that when subdividing the data tensor into separate blocks of thread to be executed in parallel, each block will have access to the tile of memory that is the most optimal in terms of speed and memory efficiency.
 
