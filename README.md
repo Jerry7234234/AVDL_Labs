@@ -82,8 +82,10 @@ Tiling refers to subdivide and regrouping a multidimensional array of memeory fo
 
 Tiling organises memory by dividing the 1D memory space into groups of multidimensional spaces that are more easily accessed during the loading of data from and to the shared memory.
 
-`Tensor gX = local_tile(mX, cta_tiler, cta_coord);                               // (BLK_M, BLK_K)
-Tensor gScale = local_tile(vScale, select<1>(cta_tiler), select<1>(cta_coord)); // (BLK_K,)
+`Tensor gX = local_tile(mX, cta_tiler, cta_coord);                           
+
+Tensor gScale = local_tile(vScale, select<1>(cta_tiler), select<1>(cta_coord));
+
 Tensor gY = local_tile(mY, cta_tiler, cta_coord);`
 
 It can either divide the memeory space into intersecting groups with different strides, or into adjacent blocks with a stride of 1. The indices within each tile are partitioned by the input layout, which can be pre-defined by the programmer using layout composition. This means that when subdividing the data tensor into separate blocks of thread to be executed in parallel, each block will have access to the tile of memory that is the most optimal in terms of speed and memory efficiency.
