@@ -111,6 +111,9 @@ Tensor tXcX = local_partition(cX, layout_sX, threadIdx.x);
 
 The input data `x` is first subdivided into group tiles `mX` and then a shared memory is allocated to the group tiles to form `smem` and `sX`. The thread partition uses the group tiles `gX` and shared memory space `sX` together with layout to enable parallel computation with maximum memeory efficiency.
 
+Example of using layout in 2D tiling.
+![Screenshot9](https://github.com/Jerry7234234/AVDL_Labs/blob/main/layout.png)
+
 ### Why the saved GPU memory is not exactly (32 - (4+8/32))/32 = 86.7%?
 First obvious answer is that the formula used to calculate memory efficiency is for MXINT4. Namely MXINT format with only 4 bits in the mantissa part. The MXINT format used in the experiment is MXINT8 (8 bits in the mantissa part), so the effective bandwidth should be (8+8/32). The correct saved memory prediction should be: (32 - (8+8/32))/32 = 74.2%.
 
