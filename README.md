@@ -34,7 +34,7 @@ During the neural architectue search, we trained the model for 1 epoch. After co
 ## Lab3: Mixed precision search
 ![Screenshot6](https://github.com/Jerry7234234/AVDL_Labs/blob/main/MPS1.png)
 
-![Screenshot7](https://github.com/Jerry7234234/AVDL_Labs/blob/main/Screenshot%202025-02-04%20121516.png)
+![Screenshot7](https://github.com/Jerry7234234/AVDL_Labs/blob/main/MPS2.png)
 
 ## Lab4
 ### Task 1 a)
