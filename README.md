@@ -99,7 +99,17 @@ It can either divide the memeory space into intersecting groups with different s
 This means that when subdividing the data tensor into separate blocks of thread to be executed in parallel, each block will have access to the tile of memory that is the most optimal in terms of speed and memory efficiency.
 
 ### c ii) How does layout_sX partition threads in a threadblock for computation? 
-Layout partition memeroy spaces so that data loading and computation can be more efficient. The cutlass layout uses composition and division to group memeory spaces into tiles. Each tile is then assigned to a thread based on the layout using the `local_partition()` function. The input data `x` is first subdivided into group tiles `mX` and then a shared memory is allocated to the group tiles to form `smem` and `sX`. The thread partition uses the group tiles `gX` and shared memory space `sX` together with layout to enable parallel computation with maximum memeory efficiency.
+Layout partition memeroy spaces so that data loading and computation can be more efficient. The cutlass layout uses composition and division to group memeory spaces into tiles. Each tile is then assigned to a thread based on the layout using the `local_partition()` function. 
+
+```
+Tensor tXgX = local_partition(gX, layout_tX, threadIdx.x);
+Tensor tXsX = local_partition(sX, layout_sX, threadIdx.x);
+Tensor tXgY = local_partition(gY, layout_tX, threadIdx.x);
+...
+Tensor tXcX = local_partition(cX, layout_sX, threadIdx.x);
+```
+
+The input data `x` is first subdivided into group tiles `mX` and then a shared memory is allocated to the group tiles to form `smem` and `sX`. The thread partition uses the group tiles `gX` and shared memory space `sX` together with layout to enable parallel computation with maximum memeory efficiency.
 
 ### Why the saved GPU memory is not exactly (32 - (4+8/32))/32 = 86.7%?
 First obvious answer is that the formula used to calculate memory efficiency is for MXINT4. Namely MXINT format with only 4 bits in the mantissa part. The MXINT format used in the experiment is MXINT8 (8 bits in the mantissa part), so the effective bandwidth should be (8+8/32). The correct saved memory prediction should be: (32 - (8+8/32))/32 = 74.2%.
