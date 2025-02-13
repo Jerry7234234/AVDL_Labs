@@ -12,7 +12,7 @@ A brief description of the project.
 Post quantization training brought the accuracy back to the same level as the unquantizaed model.
 
 ### Task 2
-![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/NAS2.png)
+![Screenshot2](https://github.com/Jerry7234234/AVDL_Labs/blob/main/pruning%201.png)
 
 We can see that structured pruning using L1-norm regulerisation achieves a higher maximum accuracy than random structured pruning. To better visualize the performance of the two methods, we can plot the actual accuracy per iteration. As shown below:
 
