@@ -7,7 +7,7 @@ A brief description of the project.
 
 ## Lab1: Quantization and pruning
 ### Task 1
-![Screenshot1](https://github.com/Jerry7234234/AVDL_Labs/blob/main/NAS1.png)
+![Screenshot1](https://github.com/Jerry7234234/AVDL_Labs/blob/main/quantization.png)
 
 Post quantization training brought the accuracy back to the same level as the unquantizaed model.
 
