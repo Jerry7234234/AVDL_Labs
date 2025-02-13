@@ -69,9 +69,9 @@ MXINT8: 01111111 | 00.111100 = $2 ^ {2 ^ 7 - 1 - 127} \times (2^{-1} + 2^{-2} + 
 
 If we force that to be bfloat16 number (without bias subtraction) then: 0 | 01111111 | 1111000 = $2 ^ {2 ^ 7 - 1 - 127} \times (1 + 2^{-1} + 2^{-2} + 2^{-3} + 2^{-4}) = 1 \times 1.9375 = 1.9375$
 
-As we can see, the fact the bfloat16 representation assumes a leading 1. being added to the fractional value leads to dequantization error. Hence by subtracting the bias:
+As we can see, the fact the bfloat16 representation assumes a leading 1. being added to the fractional value means that whenever the 7th bit of mantissa is 0, the converted results will have an error of 1.0, leading to dequantization error. Hence by subtracting the bias:
 
-output - bias = 0 | 01111111 | 1111000 - 0 | 01111111 | 0000000 =
+output - bias = 0 | 01111111 | 1111000 (bfloat16) - 0 | 01111111 | 0000000 (bfloat16) = 1.9375 - 1.0 =
 
 (0 | 00000000 | 1111000 - 0 | 00000000 | 1000000) << 1 + 0 | 01111111 | 0000000 - 0 | 00000001 | 0000000 = 0 | 01111110 | 1110000 = 0.9375
 
@@ -111,7 +111,7 @@ Tensor tXcX = local_partition(cX, layout_sX, threadIdx.x);
 
 The input data `x` is first subdivided into group tiles `mX` and then a shared memory is allocated to the group tiles to form `smem` and `sX`. The thread partition uses the group tiles `gX` and shared memory space `sX` together with layout to enable parallel computation with maximum memeory efficiency.
 
-Example of using layout in 2D tiling.
+Example of using layout in 2D tiling:
 ![Screenshot9](https://github.com/Jerry7234234/AVDL_Labs/blob/main/layout.png)
 
 ### Why the saved GPU memory is not exactly (32 - (4+8/32))/32 = 86.7%?
